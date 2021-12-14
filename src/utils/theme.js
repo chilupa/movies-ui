@@ -2,9 +2,13 @@ import { createTheme, responsiveFontSizes } from '@mui/material';
 
 export const theme = responsiveFontSizes(
   createTheme({
+    // palette: {
+    //   primary: { main: colors.green[800] },
+    //   secondary: { main: colors.orange[600] },
+    // },
     typography: {
       fontFamily: [
-        'Ubuntu',
+        'Poppins',
         '-apple-system',
         'BlinkMacSystemFont',
         '"Segoe UI"',
