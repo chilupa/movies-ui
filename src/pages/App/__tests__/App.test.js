@@ -5,6 +5,6 @@ import App from '../App';
 describe('App', () => {
   it('should render App component', () => {
     const { getByText } = render(<App />);
-    expect(getByText(/React/)).toBeInTheDocument();
+    expect(getByText(/Movies/)).toBeInTheDocument();
   });
 });
