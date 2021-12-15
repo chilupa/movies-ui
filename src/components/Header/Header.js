@@ -1,7 +1,23 @@
 import React from 'react';
-import { Box, colors, Typography } from '@mui/material';
+import { Box, Button, colors, TextField, Typography } from '@mui/material';
+import PropTypes from 'prop-types';
+import { useFormik } from 'formik';
 
-const Header = () => {
+const Header = ({ title, setTitle }) => {
+  const formik = useFormik({
+    initialValues: {
+      title: '',
+    },
+    onSubmit: (values) => {
+      setTitle(values.title);
+    },
+  });
+
+  const handleReset = () => {
+    setTitle('');
+    formik.values.title = '';
+  };
+
   return (
     <Box
       pl={3}
@@ -12,17 +28,35 @@ const Header = () => {
       sx={{
         display: 'flex',
         alignItems: 'center',
-        backgroundColor: colors.grey[100],
+        backgroundColor: colors.teal[200],
       }}
     >
       <Typography variant="h4" fontWeight={600}>
         Movies
       </Typography>
-      <Box ml="auto" pr={3}>
-        search bar
+      <Box ml="auto" pr={3} display="flex" alignItems="center" gap={1}>
+        <form onSubmit={formik.handleSubmit}>
+          <TextField
+            sx={{ width: '400px' }}
+            id="title"
+            name="title"
+            label="Search by movie title"
+            value={formik.values.title}
+            onChange={formik.handleChange}
+            error={formik.touched.title && Boolean(formik.errors.title)}
+            helperText={formik.touched.title && formik.errors.title}
+          />
+        </form>
+
+        <Box>{title && <Button onClick={handleReset}>Reset</Button>}</Box>
       </Box>
     </Box>
   );
+};
+
+Header.propTypes = {
+  title: PropTypes.string,
+  setTitle: PropTypes.func,
 };
 
 export default Header;
