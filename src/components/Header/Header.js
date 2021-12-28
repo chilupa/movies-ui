@@ -28,7 +28,7 @@ const Header = ({ title, setTitle }) => {
       sx={{
         display: 'flex',
         alignItems: 'center',
-        backgroundColor: colors.teal[200],
+        backgroundColor: colors.green[300],
       }}
     >
       <Typography variant="h4" fontWeight={600}>
@@ -40,6 +40,7 @@ const Header = ({ title, setTitle }) => {
             sx={{ width: '400px' }}
             id="title"
             name="title"
+            //  color="primary"
             label="Search by movie title"
             value={formik.values.title}
             onChange={formik.handleChange}

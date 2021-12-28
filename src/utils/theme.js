@@ -1,11 +1,15 @@
-import { createTheme, responsiveFontSizes } from '@mui/material';
+import { colors, createTheme, responsiveFontSizes } from '@mui/material';
 
 export const theme = responsiveFontSizes(
   createTheme({
-    // palette: {
-    //   primary: { main: colors.green[800] },
-    //   secondary: { main: colors.orange[600] },
-    // },
+    palette: {
+      primary: {
+        main: colors.grey[900],
+      },
+      secondary: {
+        main: colors.green[600],
+      },
+    },
     typography: {
       fontFamily: [
         'Poppins',
