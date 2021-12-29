@@ -37,7 +37,7 @@ const Header = ({ title, setTitle }) => {
       <Box ml="auto" pr={3} display="flex" alignItems="center" gap={1}>
         <form onSubmit={formik.handleSubmit}>
           <TextField
-            sx={{ width: '400px' }}
+            sx={{ width: 'auto' }}
             id="title"
             name="title"
             //  color="primary"
